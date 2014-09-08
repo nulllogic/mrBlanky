@@ -1,9 +1,9 @@
 <?php
-/*
+/**
  *  Author: Todd Motto | @toddmotto
  *  URL: html5blank.com | @html5blank
  *  Custom functions, support, custom post types and more.
- */
+ **/
 
 /*------------------------------------*\
 	External Modules/Files
@@ -443,7 +443,7 @@ $wBoost->addScript('style')
        ->addScript('styly3');
 
 
-$wBoost->get('Taxonomy')
+$wBoost->get('Register')
 			->register_custom_post_type('name');
 
 
