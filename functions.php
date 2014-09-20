@@ -428,23 +428,5 @@ add_theme_support('automatic-feed-links');
 // Localisation Support
 load_theme_textdomain('template', get_template_directory() . '/i18n/languages');
 
-// Init wBoost
-$wBoost = new wBoost\Core();
-
-// Add styles
-$wBoost->addStyle('style')
-		->addStyle('style2')
-		->addStyle('styly3');
-
-
-// Add javascript
-$wBoost->addScript('style')
-       ->addScript('style2')
-       ->addScript('styly3');
-
-
-$wBoost->get('Register')
-			->register_custom_post_type('name');
-
 
 ?>
