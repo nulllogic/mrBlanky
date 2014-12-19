@@ -1,16 +1,17 @@
 <?php get_header(); ?>
 
-	<div role="main">
-		<!-- section -->
-		<div>
+<div role="main">
+	<!-- section -->
+	<div>
 
-			<?php get_template_part( 'templates/page', 'home' ); ?>
+		<?php /* The loop */ ?>
+		<?php get_template_part( 'templates/page', 'home' ); ?>
 
-			<?php get_template_part('pagination'); ?>
+		<?php get_template_part( 'pagination' ); ?>
 
-		</div>
-		<!-- /section -->
 	</div>
+	<!-- /section -->
+</div>
 
 <?php get_sidebar(); ?>
 
