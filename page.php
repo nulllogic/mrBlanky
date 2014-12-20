@@ -6,35 +6,32 @@
 
 			<h1><?php the_title(); ?></h1>
 
-		<?php if (have_posts()): while (have_posts()) : the_post(); ?>
+			<?php /* The loop */ ?>
+			<?php while ( have_posts() ) : the_post(); ?>
 
-			<!-- article -->
-			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+					<header class="entry-header">
+						<?php if ( has_post_thumbnail() && ! post_password_required() ) : ?>
+							<div class="entry-thumbnail">
+								<?php the_post_thumbnail(); ?>
+							</div>
+						<?php endif; ?>
 
-				<?php the_content(); ?>
+						<h1 class="entry-title"><?php the_title(); ?></h1>
+					</header><!-- .entry-header -->
 
-				<?php comments_template( '', true ); // Remove if you don't want comments ?>
+					<div class="entry-content">
+						<?php the_content(); ?>
+						<?php wp_link_pages( array( 'before' => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'twentythirteen' ) . '</span>', 'after' => '</div>', 'link_before' => '<span>', 'link_after' => '</span>' ) ); ?>
+					</div><!-- .entry-content -->
 
-				<br class="clear">
+					<footer class="entry-meta">
+						<?php edit_post_link( __( 'Edit', 'twentythirteen' ), '<span class="edit-link">', '</span>' ); ?>
+					</footer><!-- .entry-meta -->
+				</article><!-- #post -->
+			<?php endwhile; ?>
 
-				<?php edit_post_link(); ?>
-
-			</article>
-			<!-- /article -->
-
-		<?php endwhile; ?>
-
-		<?php else: ?>
-
-			<!-- article -->
-			<article>
-
-				<h2><?php _e( 'Sorry, nothing to display.', 'html5blank' ); ?></h2>
-
-			</article>
-			<!-- /article -->
-
-		<?php endif; ?>
+			<?php comments_template( '', true ); // Remove if you don't want comments ?>
 
 		</section>
 		<!-- /section -->
