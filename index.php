@@ -1,18 +1,13 @@
 <?php get_header(); ?>
 
-<div role="main">
+<main role="main">
 	<!-- section -->
-	<div>
+	<div class="row">
 
-		<?php /* The loop */ ?>
 		<?php get_template_part( 'templates/page', 'home' ); ?>
-
-		<?php get_template_part( 'pagination' ); ?>
 
 	</div>
 	<!-- /section -->
-</div>
-
-<?php get_sidebar(); ?>
+</main>
 
 <?php get_footer(); ?>
