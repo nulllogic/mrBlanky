@@ -5,7 +5,7 @@
  */
 define( 'mrBlanky', '0.0.3' );
 
-require_once( 'inc/blank-menu-walker.php' );
+require_once( get_template_directory(). '/includes/navigation/blank-menu-walker.php' );
 
 if ( ! function_exists( 'theme_init' ) ) {
 	function theme_init() {
