@@ -3,9 +3,27 @@
 /**
  * The current version of the theme.
  */
-define( 'mrBlanky', '0.0.3' );
+define( 'MRBLANKY', '0.1.0' );
 
 require_once( get_template_directory(). '/includes/navigation/blank-menu-walker.php' );
+
+
+/**
+ * AJAX
+ */
+
+require_once( get_template_directory() . '/includes/core/ajax.php' );
+
+/**
+ * Custom Post Types
+ */
+
+require_once( get_template_directory() . '/includes/core/custom-post-types.php' );
+
+/**
+ * Custom Taxonomy
+ */
+require_once get_stylesheet_directory() . '/includes/core/custom-taxonomies.php';
 
 if ( ! function_exists( 'theme_init' ) ) {
 	function theme_init() {
