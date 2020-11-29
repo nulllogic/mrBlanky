@@ -77,8 +77,11 @@ if ( ! function_exists( 'disable_wp_emojicons' ) ) {
 if ( ! function_exists( 'theme_enqueue_scripts' ) ) {
 	function theme_enqueue_scripts() {
 
-		\wp_enqueue_style( 'style', get_template_directory_uri() . '/assets/css/vendor/girls_core.css', array(), '2015' );
-		\wp_enqueue_script( 'boot', get_template_directory_uri() . '/assets/js/boot.js', array( 'jquery' ), '2015', true );
+		\wp_enqueue_style( 'style', get_template_directory_uri() . '/assets/css/vendor/girls_core.css', array(), MRBLANKY );
+		\wp_enqueue_script( 'app.js', get_template_directory_uri() . '/assets/js/app.js', array( 'jquery' ), MRBLANKY, true );
+		\wp_localize_script( 'app.js', 'theme', array(
+			'ajax_url' => admin_url( 'admin-ajax.php' )
+		) );
 	}
 }
 
